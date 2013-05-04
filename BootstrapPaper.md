@@ -18,3 +18,28 @@ Preface-Opinions from the first section
 
 Bootstrapping Procedure
 -------------------------------------------------
+### A1.Individual Munual Funds Alphas
+
+Bootstrap can improve the nonnormalize thing
+
+### A2.Cross Section of Mutual Fund Alphas
+
+A lot of factors(such as heterogeneity and individual distribution) leads to the bootstrap a best method.
+
+### B.Implementation
+
+two models
+
+两个线性模型（MD怎么打公式）
+
+### B1.baseline bootstrap procedure:residual sampling
+
+首先：对数据OLS估计
+
+固定i对OLS的残差panel重抽样，生成pseudo-time series
+
+再替换model中的残差，同时set alpha=0，重新生成收益率数据
+
+上述步骤重复1000遍，看新的收益率数据分布
+
+把生成的与实际的相比：如果二者差很远，就认为是skill ，rather than luck.
