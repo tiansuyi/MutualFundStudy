@@ -30,7 +30,11 @@ A lot of factors(such as heterogeneity and individual distribution) leads to the
 
 two models
 
-两个线性模型（MD怎么打公式）
+两个线性模型
+
+$$r_{i,t}=\alpha_{i}+\beta_{i}*RMRF{t}+s_{i}*SMB_{T}+h_{i}*HML_{t}+p_{i}*PR1YR_{t}+\epsilon_{i,t}$$
+
+$$r_{i,t}=\alpha_{i}+\beta_{i}*RMRF{t}+s_{i}*SMB_{T}+h_{i}*HML_{t}+p_{i}*PR1YR_{t}+\sum_{j=1}^{K}B_{i,j}[z_{j,t-1}*RMRF_{t}]+\epsilon_{i,t}$$
 
 ### B1.baseline bootstrap procedure:residual sampling
 
@@ -43,3 +47,32 @@ two models
 上述步骤重复1000遍，看新的收益率数据分布
 
 把生成的与实际的相比：如果二者差很远，就认为是skill ，rather than luck.
+
+DATA和一些基本统计描述
+-----------------------
+Empirical Resaults
+-----------------------
+### Normality of Individual Fund Alphas
+
+以较高概率拒绝正态假设
+
+### Bootstrap Analysis of Significant of Alpha Outliers
+
+1、outperform（例如最高10%的基金）的基金的alpha和t统计量（以估计方差标准化后的统计量）都很高
+2、bootsrap后的p值就对应的升高了，呈现出了t分布的特征
+
+### Bootstrap test of Subperiods
+### Bootstrap test of investment objective subgroups
+growth-oriented fund outperform income-oriented fund
+
+Sensitivity Analysis-robust
+-------------------------
+### time series dependence
+通过对不同长度的残差的在抽样来弱化不独立的 ，结果是所有t统计量（Bootstrap与非Bootstrap）和之前的结论一样
+
+### Residual and Factor Resampling
+这里，除了残差项，连回归的factors都会被重抽样，显然，这会与之前结果相同
+
+###Cross-sectional Bootstrap
+与之前不同（之前是重抽individual），现在是固定T，把所有截面的残差冲抽样考虑，结论与之前一样
+
