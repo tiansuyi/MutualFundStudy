@@ -73,6 +73,33 @@ Sensitivity Analysis-robust
 ### Residual and Factor Resampling
 这里，除了残差项，连回归的factors都会被重抽样，显然，这会与之前结果相同
 
-###Cross-sectional Bootstrap
+### Cross-sectional Bootstrap
 与之前不同（之前是重抽individual），现在是固定T，把所有截面的残差冲抽样考虑，结论与之前一样
 
+### portfolios of fund
+通过构架不同分位数的基金组合，对组合的表现进行检测，同样，结论没变化
+
+### Length of Data Records
+因为short-live fund较long-live fund有更多的极端值,作者用long-live fund试，结论不变
+
+### Persisted omitted facto in fund residual
+作者指一些未被考虑到residual里的重要变量会被归因为manager talent
+
+作者认为他选的短期fund不存在这种factor，另对residual用了AR(1)（没看懂ar（1）目的）
+
+### bootstrap test for stockholding-based alphas
+matching each stock with a value-weighted portfolio of the same stock
+
+i.e.
+$$CS_{t}=\sum_{j=1}^{N}w_{j,t-1}(R_{j,t}-R_{t}^{b_{j},t-1})$$
+其中，$w_{j,t-1}$是股票j在t-1时刻的权重，$R_{j,t}$是股票j在时区t的回报，$R_{t}^{b_{j},t-1}$是t时刻投资组合的回报
+
+同样的道理，作者对每一个股票都计算了CS，然后又通过重抽样的方法检验t统计量，结果同上
+Performance Persistence
+--------------------------------
+Carhart(1997)
+
+在本文里，作者用滞后的residual的“错位”相加检验“持续性”
+Conclusion
+--------------------------------
+no luck,management skill
